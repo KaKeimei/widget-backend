@@ -109,8 +109,8 @@ public class ExchangePriceManager {
         BigDecimal mediumPrice = buy.add(sell).divide(new BigDecimal(2), BigDecimal.ROUND_HALF_DOWN);
         float feeRate = 100 * (sell.floatValue() - mediumPrice.floatValue()) / mediumPrice.floatValue();
         String feeRateString = new DecimalFormat(".00").format(feeRate) + "%";
-        zaifPriceModel.setAskPrice(buy);
-        zaifPriceModel.setBidPrice(sell);
+        zaifPriceModel.setAskPrice(sell);
+        zaifPriceModel.setBidPrice(buy);
         zaifPriceModel.setMediumPrice(mediumPrice);
         zaifPriceModel.setFeeRate(feeRateString);
         zaifPriceModel.setTicker(ticker.toUpperCase());
