@@ -31,4 +31,9 @@ public class ExchangePriceController {
     public String getGMOPrice() {
         return exchangePriceManager.getGMOPrices();
     }
+
+    @GetMapping("zaif")
+    public String getZaifPrice() {
+        return exchangePriceManager.getZaifPrices();
+    }
 }
