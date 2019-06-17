@@ -36,4 +36,9 @@ public class ExchangePriceController {
     public String getZaifPrice() {
         return exchangePriceManager.getZaifPrices();
     }
+
+    @GetMapping("hello")
+    public String helloWorld() {
+        return "hello world, elastic beanstalk...";
+    }
 }
