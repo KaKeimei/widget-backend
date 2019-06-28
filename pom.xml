@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.huobi.jp</groupId>
     <artifactId>widget-backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>widget-backend</name>
     <description>widget backend server</description>
 
@@ -44,6 +44,17 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>aws-snapshot</id>
+            <url>s3://maven.huobi.jp/snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>aws-release</id>
+            <url>s3://maven.huobi.jp/release</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -51,6 +62,13 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
     </build>
 
 </project>
